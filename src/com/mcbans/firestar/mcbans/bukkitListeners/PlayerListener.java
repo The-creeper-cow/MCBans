@@ -67,7 +67,7 @@ public class PlayerListener implements Listener {
 
             // get player information
             final String uriStr = "http://" + plugin.apiServer + "/v3/" + config.getApiKey() + "/login/"
-                    + URLEncoder.encode(event.getUniqueId().toString(), "UTF-8") + "/"
+                    + URLEncoder.encode(event.getName(), "UTF-8") + "/"
                     + URLEncoder.encode(String.valueOf(event.getAddress().getHostAddress()), "UTF-8") + "/"
                     + plugin.apiRequestSuffix;
             final URLConnection conn = new URL(uriStr).openConnection();

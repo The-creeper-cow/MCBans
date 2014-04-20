@@ -217,12 +217,13 @@ public class MCBans extends JavaPlugin {
         return MCBansAPI.getHandle(this, plugin);
     }
     public static Player getPlayer(Plugin plugin, String UUID){
-    	UUID = UUID.replaceAll("(?sim)([a-z0-9]{8})([a-z0-9]{4})([a-z0-9]{4})([a-z0-9]{4})([a-z0-9]{12})", "$1-$2-$3-$4-$5");
-    	for(Player p : plugin.getServer().getOnlinePlayers()){
-    		if(p.getUniqueId().toString().equals(UUID)){
-    			return p;
-    		}
-    	}
+    	// LEGACY BUILD IGNORE THIS!
+    	//UUID = UUID.replaceAll("(?sim)([a-z0-9]{8})([a-z0-9]{4})([a-z0-9]{4})([a-z0-9]{4})([a-z0-9]{12})", "$1-$2-$3-$4-$5");
+    	//for(Player p : plugin.getServer().getOnlinePlayers()){
+    		//if(p.getUniqueId().toString().equals(UUID)){
+    		//	return p;
+    		//}
+    	//}
     	return null;
     }
     public ConfigurationManager getConfigs(){
