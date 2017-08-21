@@ -39,6 +39,14 @@ defaultTemp: "You have been temporarily banned!"
 #   Default reason for users being kicked from the server, if no reason is provided.
 #   DEFAULT: "You have been kicked!"
 defaultKick: "You have been kicked!"
+#DB info
+#Until a endpoint has been created you need to use some sort of database be it sqllite or mysql i dont care
+SQL:
+  enabled: false
+  DBAddr: localhost
+  DBName: database
+  DBUser: root
+  DBPass: '123'
 
 #########################################################
 # Loging and Debug
