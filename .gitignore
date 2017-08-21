@@ -1,0 +1,23 @@
+# Eclipse stuff
+.classpath
+.project
+.settings
+.settings/
+
+# intellij
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Mac filesystem dust
+.DS_Store
+
+# others
+desktop.ini
+bin
+bin/**
+build.xml
+/target
+spigot-1.8.jar
+spigot-1.12.jar
