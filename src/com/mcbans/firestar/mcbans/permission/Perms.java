@@ -38,11 +38,14 @@ public enum Perms {
     EXEMPT_KICK     ("kick.exempt"),
     EXEMPT_BAN      ("ban.exempt"),
     EXEMPT_MAXALTS	("maxalts.exempt"),
+    EXEMPT_MUTE     ("mute.exempt"),
 
     // Others
     LOOKUP_PLAYER   ("lookup.player"),
     LOOKUP_BAN      ("lookup.ban"),
     LOOKUP_ALT      ("lookup.alt"),
+    PERM_MUTE       ("mute.perm"),
+    TEMP_MUTE       ("mute.temp")
     ;
 
     // Node header

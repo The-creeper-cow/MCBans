@@ -42,6 +42,10 @@ Global Ban Variations
 
 E.G. /ban g Firestarthe griefing
 
+Mute Variations
+* /tempmute <playername|UUID> <reason> <Time>
+* /mute <Playername|UUID> <reason>
+
 Temporary Ban Variations
 * /ban <playername|UUID> t <int> <m/h/d> <reason> - temp bans a player
 * /tban <playername|UUID> <int> <m/h/d> <reason> - temp bans a player
@@ -71,6 +75,9 @@ Permissions
 * mcbans.ban.rollback (default: op) - Allow use rban command
 * mcbans.ban.ip (default: op) - Allow use banip command
 * mcbans.ban.exempt (default: op) - Permission to exempt from bans
+* mcbans.mute.perm (default: op) - Allow perm muting player
+* mcbans.mute.temp (default: op) - Allow temp muting player
+* mcbans.mute.exempt (default: op) - Permission to exempt from mutes
 * mcbans.unban (default: op) - Allow unban player
 * mcbans.view.alts (default: op) - Show notification of a players alts on connect
 * mcbans.view.bans (default: op) - Show previous ban information on player connect

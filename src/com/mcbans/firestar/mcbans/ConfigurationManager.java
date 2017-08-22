@@ -191,6 +191,21 @@ public class ConfigurationManager {
     public int getCallBackInterval(){
         return conf.getInt("callBackInterval", 15);
     }
+    public boolean isMysqlEnabled() {
+    	return conf.getBoolean("SQL.enabled", false);
+    }
+    public String getDBaddr() {
+    	return conf.getString("SQL.DBAddr");
+    }
+    public String getDBName() {
+    	return conf.getString("SQL.DBName");
+    }
+    public String getDBUser() {
+    	return conf.getString("SQL.DBUser");
+    }
+    public String getDBPass() {
+    	return conf.getString("SQL.DBPass");
+    }
     /*
     public boolean isSendPreviousBans(){
         return conf.getBoolean("sendPreviousBans", true);

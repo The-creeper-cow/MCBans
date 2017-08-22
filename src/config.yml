@@ -41,6 +41,7 @@ defaultTemp: "You have been temporarily banned!"
 defaultKick: "You have been kicked!"
 #DB info
 #Until a endpoint has been created you need to use some sort of database be it sqllite or mysql i dont care
+#Tables will use the prefix MCBans_ this cannot be changed
 SQL:
   enabled: false
   DBAddr: localhost
