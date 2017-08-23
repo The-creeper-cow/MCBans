@@ -37,13 +37,19 @@ public class Mute implements Runnable{
 		Connection conn = DBConnection.Connect();
 		//SimpleDateFormat yyyymmddhhmmss = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 		String sql = "INSERT INTO 'mcbans_mutes' ('id', 'uuid', 'perm', 'reason', 'until') VALUES (NULL, '"+PlayerUUID+"', '1', '"+reason+"', '"+duration+"'";
+		try {
+			Statement stmt = conn.createStatement();
+			stmt.execute(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 	@Override
 	public void run() {
 		if(isPerma == true) {
 			PermaMute();
 		}else {
-			
+			TempMute();
 		}
 	}
 	
