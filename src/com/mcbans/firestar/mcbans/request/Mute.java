@@ -10,9 +10,11 @@ import com.mcbans.firestar.mcbans.MCBans;
 import com.mcbans.firestar.mcbans.util.DBConnection;
 
 public class Mute implements Runnable{
+	private Date CurrentDate = new Date();
 	private String playerName, PlayerUUID, senderName, senderUUID, reason, duration = null;
 	private boolean isPerma = true;
-	public Mute(String playerName, String PlayerUUID, String senderName, String senderUUID, String reason,boolean isPerma, String duration) {
+	private boolean isUnmute = false;
+	public Mute(String playerName, String PlayerUUID, String senderName, String senderUUID, String reason,boolean isPerma, String duration, boolean isUnmute) {
 		this.playerName = playerName;
 		this.PlayerUUID = PlayerUUID;
 		this.senderName = senderName;
@@ -20,6 +22,7 @@ public class Mute implements Runnable{
 		this.reason = reason;
 		this.isPerma = isPerma;
 		this.duration = duration;
+		this.isUnmute = isUnmute;
 	}
 	public void PermaMute() {
 		Connection conn = DBConnection.Connect();
@@ -36,7 +39,7 @@ public class Mute implements Runnable{
 	public void TempMute() {
 		Connection conn = DBConnection.Connect();
 		//SimpleDateFormat yyyymmddhhmmss = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-		String sql = "INSERT INTO 'mcbans_mutes' ('id', 'uuid', 'perm', 'reason', 'until') VALUES (NULL, '"+PlayerUUID+"', '1', '"+reason+"', '"+duration+"'";
+		String sql = "INSERT INTO 'mcbans_mutes' ('id', 'uuid', 'perm', 'reason', 'until') VALUES (NULL, '"+PlayerUUID+"', '0', '"+reason+"', '"+duration+"'";
 		try {
 			Statement stmt = conn.createStatement();
 			stmt.execute(sql);
@@ -44,12 +47,16 @@ public class Mute implements Runnable{
 			e.printStackTrace();
 		}
 	}
+	public void UnMute(){
+		Connection conn = DBConnection.Connect();
+		String sql = "DELETE FROM 'mcbans_mutes' WHERE";
+	}
 	@Override
 	public void run() {
 		if(isPerma == true) {
 			PermaMute();
-		}else {
-			TempMute();
+		}else if(isUnmute== true){
+
 		}
 	}
 	
